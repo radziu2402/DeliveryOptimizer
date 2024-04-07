@@ -23,15 +23,14 @@ The program takes a list of product names from the customer's basket as input an
 
 Input list:
 
-```json
-[
-  "Steak (300g)",
-  "Carrots (1kg)",
-  "Cold Beer (330ml)",
-  "AA Battery (4 Pcs.)",
-  "Espresso Machine",
-  "Garden Chair"
-]
+```java
+  List<String> items = List.of(
+                "Steak (300g)",
+                "Carrots (1kg)",
+                "Cold Beer (330ml)",
+                "AA Battery (4 Pcs.)",
+                "Espresso Machine",
+                "Garden Chair");
 ```
 
 Configuration file content (`config.json`):
