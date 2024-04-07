@@ -52,13 +52,13 @@ public class DeliveryOptionsLoaderTest {
 
     @Test
     void loadDeliveryOptions_throwsException_whenFileIsNotJson() {
-        // json
+        // given
         String filepath = "test.json";
         String badJson = "notAJson";
 
         when(resourceReader.getFileContent(filepath)).thenReturn(badJson);
 
-        // when
+        // when then
         assertThrows(JsonSyntaxException.class, () -> optionsLoader.loadDeliveryOptions(filepath));
     }
 

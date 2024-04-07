@@ -21,8 +21,7 @@ public class DeliveryOptionsLoader {
 
     public Map<String, List<String>> loadDeliveryOptions(final String filePath) {
         String fileContent = resourceReader.getFileContent(filePath);
-        Type type = new TypeToken<Map<String, List<String>>>() {
-        }.getType();
+        Type type = new TypeToken<Map<String, List<String>>>() {}.getType();
         return gson.fromJson(fileContent, type);
     }
 }

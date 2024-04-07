@@ -2,7 +2,6 @@ package com.ocado.basket.integration;
 
 import com.ocado.basket.BasketSplitter;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -22,8 +21,6 @@ public class BasketSplitterIntegrationTest {
     void setUp() {
         basketSplitter = new BasketSplitter("src/main/resources/config.json");
     }
-
-
 
     @ParameterizedTest
     @MethodSource("provideTestCases")
@@ -68,8 +65,8 @@ public class BasketSplitterIntegrationTest {
 
     private static Stream<Arguments> provideDataForExceptions() {
         return Stream.of(
-                Arguments.of(List.of(), IllegalArgumentException.class, "Items list cannot be null or empty." ),
-                Arguments.of(List.of("Product Not In Config"), IllegalArgumentException.class,"Item not found in delivery options configuration: Product Not In Config")
+                Arguments.of(List.of(), IllegalArgumentException.class, "Items list cannot be null or empty."),
+                Arguments.of(List.of("Product Not In Config"), IllegalArgumentException.class, "Item not found in delivery options configuration: Product Not In Config")
         );
     }
 }
